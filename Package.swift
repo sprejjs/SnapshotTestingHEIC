@@ -17,16 +17,15 @@ let package = Package(
             targets: ["SnapshotTestingHEIC"]),
     ],
     dependencies: [
-        .package(name: "SnapshotTesting",
-                 url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
-                 from: "1.8.0"),
+        .package(url: "git@github.com:pimms/swift-snapshot-testing.git",
+                 .revision("0efeef44df913fe60ea868f037f271ac927a8e8c")),
     ],
     targets: [
         .target(
             name: "SnapshotTestingHEIC",
             dependencies: [
                 .product(name: "SnapshotTesting",
-                         package: "SnapshotTesting"),
+                         package: "swift-snapshot-testing"),
             ]
         ),
         .testTarget(
